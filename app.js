@@ -14,10 +14,12 @@ function game() {
         
         let result = playRound(playerChoice, computerChoice);
         console.log(result);
+
         playerScore += +result[1];
         computerScore += +result[2];
         console.log('playerScore:', playerScore);
         console.log('computerScore:', computerScore);
+        
         counter++;
         if (counter === 6) {
             gameOver = true;
