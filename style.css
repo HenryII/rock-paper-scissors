@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    margin: 150px auto;
+}
+
+.gameInfo {
+    background-color: lightcyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    font-size: 22px;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.score {
+    display: flex;
+    height: 50%;
+    background-color: mediumaquamarine;
+    align-items: center;
+    justify-content: center;
+}
+
+#player {
+    display: flex;
+    background-color: lightskyblue;
+    height: 100%;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#computer {
+    display: flex;
+    background-color: lightpink;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.scoreInfo {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    font-size:large;
+}
+
+#playerScore, #computerScore {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.scoreMsg {
+    background-color: lavender;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(178, 178, 197);
+}
+
+.buttonsDiv {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 80px;
+}
+
+.buttons {
+    height: 100%;
+    width: 150px;
+    font-size: 18px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.buttons:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+#rock {
+    background-color: mediumpurple;
+}
+
+#paper {
+    background-color: darkcyan;
+}
+
+#scissors {
+    background-color: hotpink;
+}
+
+.space {
+    display: flex;
+    flex:1;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#newGameBtn {
+    height: 50%;
+    background-color: darkgray;
+}
