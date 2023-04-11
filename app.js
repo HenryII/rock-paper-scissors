@@ -13,38 +13,26 @@ rock.addEventListener('click', game);
 paper.addEventListener('click', game);
 scissors.addEventListener('click', game);
 
-    let counter = 0;
-    let gameOver = false;
-    let playerScore = 0;
-    let computerScore = 0;
+let counter = 0;
+let gameOver = false;
+let playerScore = 0;
+let computerScore = 0;
+playerScoreShow.innerText = playerScore;
+computerScoreShow.innerText = computerScore;
+
+function resetGame() {
+    gameOver = false;
+    playerScore = 0;
+    computerScore = 0;
     playerScoreShow.innerText = playerScore;
     computerScoreShow.innerText = computerScore;
+    scoreMsg.innerText = '';
+    gameInfo.innerText = 'Press the button of your choice to play the game';
+    this.style.display = 'none';
+}    
 
 function game(e) {
-    if (playerScore === 5 || computerScore === 5) {
-        if (playerScore > computerScore) {
-            scoreMsg.innerText = 'You win the game!';
-        } else if (playerScore < computerScore) {
-            scoreMsg.innerText = 'You lose the game!';
-        } else if (playerScore === computerScore) {
-            scoreMsg.innerText = 'The game is a draw!';
-        }
-        space.innerHTML = '<button class="buttons" id="newGameBtn">New Game</button>';
-        const newGame = document.querySelector('#newGameBtn');
-        newGame.addEventListener('click', () => {
-            gameOver = false;
-            playerScore = 0;
-            computerScore = 0;
-            playerScoreShow.innerText = playerScore;
-            computerScoreShow.innerText = computerScore;
-            scoreMsg.innerText = '';
-            newGame.style.display = 'none';
-        });
-        return;
-    }
-
-    // counter++;
-
+    
     let playerChoice = e.target.value;
     console.log('playerChoice :', e.target.value);
     let computerChoice = getComputerChoice();
@@ -61,6 +49,18 @@ function game(e) {
     playerScoreShow.innerText = playerScore;
     computerScoreShow.innerText = computerScore;
 
+    if (playerScore === 5 || computerScore === 5) {
+        if (playerScore > computerScore) {
+            gameInfo.innerText = 'You win this game!';
+        } else if (playerScore < computerScore) {
+            gameInfo.innerText = 'You lose this game!';
+        } else if (playerScore === computerScore) {
+            gameInfo.innerText = 'This game is a draw!';
+        }
+        space.innerHTML = '<button class="buttons" id="newGameBtn">New Game</button>';
+        const newGame = document.querySelector('#newGameBtn');
+        newGame.addEventListener('click', resetGame);
+    }
         
 }
 
