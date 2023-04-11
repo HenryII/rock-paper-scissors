@@ -27,7 +27,11 @@ function resetGame() {
     playerScoreShow.innerText = playerScore;
     computerScoreShow.innerText = computerScore;
     scoreMsg.innerText = '';
+    scoreMsg.style.backgroundColor = 'transparent';
     gameInfo.innerText = 'Press the button of your choice to play the game';
+    rock.classList.remove('disabled');
+    paper.classList.remove('disabled');
+    scissors.classList.remove('disabled');
     this.style.display = 'none';
 }    
 
@@ -46,6 +50,7 @@ function game(e) {
     // console.log('playerScore:', playerScore);
     // console.log('computerScore:', computerScore);
     scoreMsg.innerText = result[0];
+    scoreMsg.style.backgroundColor = 'lightpink';
     playerScoreShow.innerText = playerScore;
     computerScoreShow.innerText = computerScore;
 
@@ -57,6 +62,10 @@ function game(e) {
         } else if (playerScore === computerScore) {
             gameInfo.innerText = 'This game is a draw!';
         }
+
+        rock.classList.add('disabled');
+        paper.classList.add('disabled');
+        scissors.classList.add('disabled');
         space.innerHTML = '<button class="buttons" id="newGameBtn">New Game</button>';
         const newGame = document.querySelector('#newGameBtn');
         newGame.addEventListener('click', resetGame);

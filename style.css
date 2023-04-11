@@ -21,7 +21,6 @@ body {
 }
 
 .gameInfo {
-    background-color: lightcyan;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +41,7 @@ body {
 
 #player {
     display: flex;
-    background-color: lightskyblue;
+    background-color: rgb(177, 217, 246);
     height: 100%;
     flex: 1;
     align-items: center;
@@ -52,7 +51,7 @@ body {
 
 #computer {
     display: flex;
-    background-color: lightpink;
+    background-color: rgb(196, 196, 245);
     height: 100%;
     align-items: center;
     justify-content: center;
@@ -73,13 +72,12 @@ body {
 }
 
 .scoreMsg {
-    background-color: lavender;
+    /* background-color: lightpink; */
     display: flex;
     align-items: center;
     justify-content: center;
     height: 50%;
     font-weight: bold;
-    border-bottom: 1px solid rgb(178, 178, 197);
 }
 
 .buttonsDiv {
@@ -102,6 +100,10 @@ body {
 .buttons:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     cursor: pointer;
+}
+
+.disabled {
+    pointer-events: none;
 }
 
 #rock {
